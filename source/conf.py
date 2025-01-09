@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'MISLAND DATA PREPARATION MANUAL'
-copyright = '2021, Observatoire Du Sahara Et Du Sahel(OSS)'
+copyright = '2025, Observatoire Du Sahara Et Du Sahel(OSS)'
 author = 'LocateIT Kenya Limited'
 
 # The full version, including alpha/beta/rc tags
