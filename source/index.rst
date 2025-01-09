@@ -1,5 +1,5 @@
 .. MISLAND DATA PREPARATION MANUAL documentation master file, created by
-   sphinx-quickstart on Fri Mar 26 13:09:24 2021.
+   sphinx-quickstart on Thur Jan 09 13:09:24 2025.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
