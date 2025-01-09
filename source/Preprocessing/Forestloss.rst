@@ -1,24 +1,24 @@
 ============
 Forest Loss 
 ============
-The High-resolution global forset change results from time-series analysis of Landsat images in characterizing global forest extent and change.
+The High-resolution global forest change results from time-series analysis of Landsat images in characterizing global forest extent and change.
 
 The 'first' and 'last' bands are reference multispectral imagery from the first and last available years for Landsat spectral bands 3, 4, 5, and 7. Reference composite imagery represents median observations from a set of quality-assessed growing-season observations for each of these bands.
 
-MISLAND North Africal uses the Hansen Global Forest Change v1.8 to asses forest loss in the North Africa action zone. For more details of the Hansen Global Forest Change see the `user notes`_
+MISLAND Africa uses the Hansen Global Forest Change v1.8 to asses forest loss in the Africa action zone. For more details of the Hansen Global Forest Change see the `user notes`_
 
 .. _user notes: https://storage.googleapis.com/earthenginepartners-hansen/GFC-2020-v1.8/download.html
 
 Data Preprocessing and Download on GEE
 ________________________________________
 
-1. Open the _`Google Earth Engine Code` and paste the following code to import the **Hansen Global forest change v1.8**, **OSS North Africa Action zone**(study area) and **Geometry** for forest areas in North Africa.
+1. Open the _`Google Earth Engine Code` and paste the following code to import the **Hansen Global forest change v1.8**, **Misland Africa Action zone (study area) and Geometry** for forested areas in Africa.
 
 .. code-block:: javascript
    :linenos:
 
    var image = ee.Image("UMD/hansen/global_forest_change_2020_v1_8"),
-    table = ee.FeatureCollection("users/derickongeri/NorthAfrica"),
+    table = ee.FeatureCollection("users/brianchelloti/Africa"),
     geometry = 
     /* color: #d63000 */
     /* shown: false */

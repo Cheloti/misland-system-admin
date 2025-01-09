@@ -2,7 +2,7 @@
 Data and Data sources
 ======================
 
-MISLAND-North Africa draws on a number of data sources. The data sets listed below are 
+MISLAND Africa draws on a number of data sources. The data sets listed below are 
 owned/made available by the following organizations and individuals under 
 separate terms as indicated in their respective metadata.
 
@@ -12,7 +12,7 @@ NDVI
 +------------------+-----------+---------+--------+------------------+
 | Sensor/Dataset   | Temporal  | Spatial | Extent | License          |
 +==================+===========+=========+========+==================+
-| `LANDSAT7`_      | 2001-2020 | 30 m    | Global | `Public Domain`_ |
+| `LANDSAT7`_      | 2001-2024 | 30 m    | Global | `Public Domain`_ |
 +------------------+-----------+---------+--------+------------------+
 | `MOD13Q1-coll6`_ | 2001-2016 | 250 m   | Global | `Public Domain`_ |
 +------------------+-----------+---------+--------+------------------+
@@ -144,13 +144,13 @@ Administrative Boundaries
 +--------------------------------------------+----------+---------+--------+------------------+
 
 .. note::
-    The `Natural Earth Administrative Boundaries`_ provided in MISLAND-North Africa 
+    The `Natural Earth Administrative Boundaries`_ provided in MISLAND Africa 
     are in the `public domain`_. The boundaries and names used, and the 
-    designations used, in MISLAND-North Africa do not imply official endorsement or 
+    designations used, in MISLAND Africa do not imply official endorsement or 
     acceptance by Conservation International Foundation, or by its partner 
     organizations and contributors.
 
-    If using MISLAND-North Africa for official purposes, it is recommended that users 
+    If using MISLAND Africa for official purposes, it is recommended that users 
     choose an official boundary provided by the designated office of their 
     country.
 

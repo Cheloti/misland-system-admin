@@ -14,7 +14,7 @@ To compute and download the mean anual MODIS NDVI data from google earth engine.
    :linenos:
 
 	/**** Start of imports. If edited, may not auto-convert in the playground. ****/
-	var table = ee.FeatureCollection("users/derickongeri/NorthAfrica");
+	var table = ee.FeatureCollection("users/brianchelloti/MislandAfrica");
 	/***** End of imports. If edited, may not auto-convert in the playground. *****/
 	var dataset = ee.ImageCollection('MODIS/006/MOD13Q1')
 	                  .filter(ee.Filter.date('2018-01-01', '2019-01-01'))
@@ -83,7 +83,6 @@ To compute and download desired percentile composites from google earth engine. 
 	/*
 	borders are quite coarse 
 	var northAfrica = ee.FeatureCollection('users/derickongeri/Admin')
-	// Replace country name with EGYPT, LIBYA, ALGERIA, MAURITANIA, MOROCCO, TUNISIA
 	var country = 'TUNISIA';
 	var studyArea = northAfrica.filter(ee.Filter.eq('NAME', country))
 	Map.addLayer(studyArea);

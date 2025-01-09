@@ -21,7 +21,7 @@ ____________________________
     Selecting the Precipitation data to add to Qgis
 
 
-The loaded layers, alongside the OSS North Africa action zone shapefile should appear on the layers panel on Qgis as shown below
+The loaded layers, alongside the Misland Africa action zone shapefile should appear on the layers panel on Qgis as shown below
 
 .. figure:: ../_static/Images/cqi2.png
     :width: 700
@@ -33,7 +33,7 @@ The loaded layers, alongside the OSS North Africa action zone shapefile should a
     Loading the PPT and PET NetCDF files to Qgis
 
 
-2. Clip the layers to the desires study area by navigating to *Raster*>*Extraction*>*Clip Raster by Mask Layer* option on the Qgis Menu bar.
+2. Clip the layers to the desires study area by navigating to *Raster* > *Extraction* > *Clip Raster by Mask Layer* option on the Qgis Menu bar.
 
 .. figure:: ../_static/Images/cqi1a.png
     :width: 526

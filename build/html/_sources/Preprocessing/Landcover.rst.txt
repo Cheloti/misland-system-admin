@@ -2,7 +2,7 @@
 Landcover Data Preparation
 ===========================
 
-MISLAND North Africa usese the European Space Agency (ESA) Climate Change Initiative (CCI) land cover dataset. This dataset provides global maps describing the land surface into 22 classes, which have been defined using the United Nations Food and Agriculture Organization’s (UN FAO) Land Cover Classification System (LCCS). In addition to the land cover (LC) maps, four quality flags are produced to document the reliability of the classification and change detection.
+MISLAND Africa usese the European Space Agency (ESA) Climate Change Initiative (CCI) land cover dataset. This dataset provides global maps describing the land surface into 22 classes, which have been defined using the United Nations Food and Agriculture Organization’s (UN FAO) Land Cover Classification System (LCCS). In addition to the land cover (LC) maps, four quality flags are produced to document the reliability of the classification and change detection.
 In order to ensure continuity, these land cover maps are consistent with the series of global annual LC maps from the 1990s to 2015 produced by the European Space Agency (ESA) Climate Change Initiative (CCI), which are also available on the ESA CCI LC viewer.
 
 The dataset can be downloaded here from the `ESA C3S archives`_

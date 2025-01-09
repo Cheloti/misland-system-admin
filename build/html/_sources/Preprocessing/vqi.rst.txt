@@ -31,7 +31,7 @@ To compute and download PROBAV maximum NDVI composite from google earth engine. 
     //Import the Proba-V data and North Africa region geometry
 
     var imageCollection = ee.ImageCollection("VITO/PROBAV/C1/S1_TOC_100M"),
-    table2 = ee.FeatureCollection("users/derickongeri/NorthAfrica");
+    table2 = ee.FeatureCollection("users/brianchelloti/MislandAfrica");
         
     //filet the image collection by year, compute the maximum NDVI, and clip to the study area
     var filteredCollection = imageCollection.filterDate('2018-01-01','2019-01-01')
@@ -131,7 +131,7 @@ _____________________________
     Vegetation Qulity Index model outputs
 
 .. note::
-   To save the layers with the appropriate dimensions, right click on the layer you want to save and navigate to *Export*>*Save as* and on the *Save as* dialog set the appropriate name and location for the output. Make sure to set the horizontal and vertical resolution option to 0.00277778 for all the outputs as shown below.
+   To save the layers with the appropriate dimensions, right click on the layer you want to save and navigate to *Export* > *Save as* and on the *Save as* dialog set the appropriate name and location for the output. Make sure to set the horizontal and vertical resolution option to 0.00277778 for all the outputs as shown below.
 
 .. figure:: ../_static/Images/vqi6.png
     :width: 839

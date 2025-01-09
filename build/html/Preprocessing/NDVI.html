@@ -1,105 +1,435 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vegetation Indices &mdash; MISLAND DATA PREPARATION MANUAL 0.0.1 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Vegetation Indices &#8212; MISLAND DATA PREPARATION MANUAL 0.0.1 documentation</title>
+  <script>
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-    <script src="../_static/js/theme.js"></script>
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
+
+  
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/6.1.2/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Preprocessing/NDVI';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Landcover Data Preparation" href="Landcover.html" />
-    <link rel="prev" title="Data Preparation Models" href="../Introduction/models.html" /> 
-</head>
+    <link rel="prev" title="Data sources" href="../Introduction/Introduction.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: black" >
-            <a href="../index.html" class="icon icon-home"> MISLAND DATA PREPARATION MANUAL
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item">
+                    <a class="nav-link" href="../Introduction/admin.html">
+                        MISLAND System Admin Panel
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../Introduction/data.html">
+                        Data and Data sources
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../Introduction/models.html">
+                        Data Preparation Models
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../Introduction/Introduction.html">
+                        Data sources
+                    </a>
+                </li>
+                
+
+                <li class="nav-item current active">
+                    <a class="nav-link" href="#">
+                        Vegetation Indices
+                    </a>
+                </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                <li class="nav-item">
+                    <a class="nav-link" href="Landcover.html">
+                        Landcover Data Preparation
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Forestloss.html">
+                        Forest Loss
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Ecologicalunits.html">
+                        Ecological Units Layer
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="cqi.html">
+                        Climate Quality Index
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="vqi.html">
+                        Vegetation Qulality Index
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="sqi.html">
+                        Soil Quality Index
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="mqi.html">
+                        Management Qulity Index
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="soc.html">
+                        Soil Organic Carbon
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="CVI.html">
+                        Coastal Vulnerability Index
+                    </a>
+                </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      <div class="navbar-end-item navbar-end__search-button-container">
+        
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" data-toggle="tooltip">
+    <a class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="fa-regular fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  <div class="search-button-container--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+  </div>
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">MISLAND System Admin</span></p>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item">
+                    <a class="nav-link" href="../Introduction/admin.html">
+                        MISLAND System Admin Panel
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../Introduction/data.html">
+                        Data and Data sources
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../Introduction/models.html">
+                        Data Preparation Models
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../Introduction/Introduction.html">
+                        Data sources
+                    </a>
+                </li>
+                
+
+                <li class="nav-item current active">
+                    <a class="nav-link" href="#">
+                        Vegetation Indices
+                    </a>
+                </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                <li class="nav-item">
+                    <a class="nav-link" href="Landcover.html">
+                        Landcover Data Preparation
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Forestloss.html">
+                        Forest Loss
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Ecologicalunits.html">
+                        Ecological Units Layer
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="cqi.html">
+                        Climate Quality Index
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="vqi.html">
+                        Vegetation Qulality Index
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="sqi.html">
+                        Soil Quality Index
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="mqi.html">
+                        Management Qulity Index
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="soc.html">
+                        Soil Organic Carbon
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="CVI.html">
+                        Coastal Vulnerability Index
+                    </a>
+                </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" data-toggle="tooltip">
+    <a class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="fa-regular fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+<h3><a href="../index.html">Table of Contents</a></h3>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">MISLAND System Admin</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../Introduction/admin.html">MISLAND System Admin Panel</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/admin.html#system-setting">System Setting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../Introduction/admin.html#guest-user-polygon-size-limit">Guest user polygon size limit</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Introduction/admin.html#signed-up-user-polygon-size-limit">Signed up user polygon size limit</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Introduction/admin.html#enable-user-account-activation">Enable user account activation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Introduction/admin.html#email-urls-and-host-email-host-port-setup">Email, URLs and host email host port setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Introduction/admin.html#enable-cache-limit">Enable Cache Limit</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Introduction/admin.html#backend-port">Backend port</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Introduction/admin.html">MISLAND System Admin Panel</a></li>
 </ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/admin.html#scheduled-tasks">Scheduled Tasks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/admin.html#uploading-and-manipulating-data-in-the-system">Uploading and Manipulating data in the system</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../Introduction/admin.html#uploading-data-set">Uploading data set</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Introduction/admin.html#uploading-medalus-data">Uploading Medalus data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Introduction/admin.html#uploading-landsat-data">Uploading Landsat data</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/admin.html#adding-editing-question">Adding/editing Question</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/admin.html#modifying-gallery-items">Modifying Gallery Items</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/admin.html#managing-custom-shapefile">Managing Custom shapefile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/admin.html#computation-threshold">Computation Threshold</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/admin.html#managing-users">Managing Users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/admin.html#user-feedback">User Feedback</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/admin.html#google-analytics">Google analytics</a></li>
-</ul>
-</li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Data Preparation</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Preparation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../Introduction/data.html">Data and Data sources</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/data.html#ndvi">NDVI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/data.html#soil-moisture">Soil moisture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/data.html#precipitation">Precipitation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/data.html#evapotranspiration">Evapotranspiration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/data.html#land-cover">Land cover</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/data.html#soil-carbon">Soil carbon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/data.html#agroecological-zones">Agroecological Zones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/data.html#soil-quality">Soil Quality</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/data.html#climate">Climate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/data.html#administrative-boundaries">Administrative Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Introduction/data.html">Data and Data sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Introduction/models.html">Data Preparation Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Introduction/Introduction.html">Data sources</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../Introduction/models.html">Data Preparation Models</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Introduction/models.html#the-graphical-modeler">The graphical modeler</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../Introduction/models.html#definition-of-inputs">Definition of inputs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Introduction/models.html#definition-of-the-workflow">Definition of the workflow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Introduction/models.html#interacting-with-the-canvas-and-elements">Interacting with the canvas and elements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Introduction/models.html#saving-and-loading-models">Saving and loading models</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../Introduction/models.html#exporting-a-model-as-an-image-pdf-or-svg">Exporting a model as an image, PDF or SVG</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../Introduction/models.html#editing-a-model">Editing a model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Introduction/models.html#editing-model-help-files-and-meta-information">Editing model help files and meta-information</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Introduction/models.html#exporting-a-model-as-a-python-script">Exporting a model as a Python script</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Data Preprocessing in Qgis</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Preprocessing in Qgis</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Vegetation Indices</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#modis-ndvi">MODIS NDVI</a><ul>
@@ -112,343 +442,340 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Landcover.html">Landcover Data Preparation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Landcover.html#data-preprocessing-steps">Data Preprocessing Steps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Landcover.html#data-upload-to-misland-service">Data Upload to MISLAND service</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Forestloss.html">Forest Loss</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Forestloss.html#data-preprocessing-and-download-on-gee">Data Preprocessing and Download on GEE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Forestloss.html#data-preprocessing-in-qgis">Data Preprocessing in Qgis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Forestloss.html#upload-to-misland-service">Upload to MISLAND Service</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Ecologicalunits.html">Ecological Units Layer</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Ecologicalunits.html#qgis-data-pre-processing-steps">QGIS Data pre-processing steps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Ecologicalunits.html#uploading-the-ecological-units-to-misland-service">Uploading the Ecological Units to MISLAND Service</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="cqi.html">Climate Quality Index</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cqi.html#data-preprocessing-in-qgis">Data Preprocessing in Qgis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cqi.html#uploading-the-arididy-index-to-misland-service">Uploading the Arididy Index to MISLAND Service</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cqi.html#uploading-the-rainfall-data-to-misland-service">Uploading the Rainfall Data to MISLAND Service</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="vqi.html">Vegetation Qulality Index</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="vqi.html#compute-and-download-probav-maxndvi-form-google-earth-engine">Compute and download PROBAV maxNDVI form Google Earth Engine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vqi.html#data-preprocessing-in-qgis">Data Preprocessing in Qgis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vqi.html#data-upload-to-misland-service">Data Upload to MISLAND service</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="Landcover.html">Landcover Data Preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Forestloss.html">Forest Loss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ecologicalunits.html">Ecological Units Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cqi.html">Climate Quality Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vqi.html">Vegetation Qulality Index</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sqi.html">Soil Quality Index</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mqi.html">Management Qulity Index</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="mqi.html#data-preprocessing-in-qgis">Data Preprocessing in Qgis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mqi.html#uploading-the-data-to-misland-service">Uploading the data to MISLAND Service</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="mqi.html">Management Qulity Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="soc.html">Soil Organic Carbon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVI.html">Coastal Vulnerability Index</a></li>
 </ul>
 
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: black" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">MISLAND DATA PREPARATION MANUAL</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Vegetation Indices</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/Preprocessing/NDVI.rst.txt" rel="nofollow"> View page source</a>
-      </li>
-  </ul>
-  <hr/>
+    </div>
+    <div class="sidebar-start-items__item">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../Introduction/Introduction.html"
+                          title="previous chapter">Data sources</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="Landcover.html"
+                          title="next chapter">Landcover Data Preparation</a></p>
+  </div>
+    </div>
+    <div class="sidebar-start-items__item">
+<div class="tocsection sourcelink">
+    <a href="../_sources/Preprocessing/NDVI.rst.txt">
+        <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+
+    </div>
+    <div class="sidebar-start-items__item">
+<div id="searchbox"></div>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+      </div>
+      <main class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+            </div>
+            
+            
+            <article class="bd-article" role="main">
+              
   <section id="vegetation-indices">
-<h1>Vegetation Indices<a class="headerlink" href="#vegetation-indices" title="Permalink to this headline"></a></h1>
+<h1>Vegetation Indices<a class="headerlink" href="#vegetation-indices" title="Permalink to this heading">#</a></h1>
 <section id="modis-ndvi">
-<h2>MODIS NDVI<a class="headerlink" href="#modis-ndvi" title="Permalink to this headline"></a></h2>
+<h2>MODIS NDVI<a class="headerlink" href="#modis-ndvi" title="Permalink to this heading">#</a></h2>
 <section id="data-download-from-google-earth-engine">
-<h3>Data download from Google Earth Engine<a class="headerlink" href="#data-download-from-google-earth-engine" title="Permalink to this headline"></a></h3>
+<h3>Data download from Google Earth Engine<a class="headerlink" href="#data-download-from-google-earth-engine" title="Permalink to this heading">#</a></h3>
 <p>The MOD13Q1 V6 product provides a Vegetation Index (VI) value at a per pixel basis. There are two primary vegetation layers. The first is the Normalized Difference Vegetation Index (NDVI) which is referred to as the continuity index to the existing National Oceanic and Atmospheric Administration-Advanced Very High Resolution Radiometer (NOAA-AVHRR) derived NDVI. The second vegetation layer is the Enhanced Vegetation Index (EVI) that minimizes canopy background variations and maintains sensitivity over dense vegetation conditions. The MODIS NDVI and EVI products are computed from atmospherically corrected bi-directional surface reflectances that have been masked for water, clouds, heavy aerosols, and cloud shadows.</p>
 <p>To compute and download the mean anual MODIS NDVI data from google earth engine. Open the <a class="reference external" href="https://code.earthengine.google.com/">Google Earth Engine Code</a> and paste the lines of code provided below</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>     <span class="cm">/**** Start of imports. If edited, may not auto-convert in the playground. ****/</span>
-<span class="linenos"> 2</span>     <span class="kd">var</span> <span class="nx">table</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="s2">&quot;users/derickongeri/NorthAfrica&quot;</span><span class="p">);</span>
-<span class="linenos"> 3</span>     <span class="cm">/***** End of imports. If edited, may not auto-convert in the playground. *****/</span>
-<span class="linenos"> 4</span>     <span class="kd">var</span> <span class="nx">dataset</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;MODIS/006/MOD13Q1&#39;</span><span class="p">)</span>
-<span class="linenos"> 5</span>                       <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">date</span><span class="p">(</span><span class="s1">&#39;2018-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-01-01&#39;</span><span class="p">))</span>
-<span class="linenos"> 6</span>                       <span class="p">.</span><span class="nx">mean</span><span class="p">()</span>
-<span class="linenos"> 7</span>                       <span class="p">.</span><span class="nx">clip</span><span class="p">(</span><span class="nx">table</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="w">     </span><span class="cm">/**** Start of imports. If edited, may not auto-convert in the playground. ****/</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="s2">&quot;users/brianchelloti/MislandAfrica&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">     </span><span class="cm">/***** End of imports. If edited, may not auto-convert in the playground. *****/</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">dataset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;MODIS/006/MOD13Q1&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">                       </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">date</span><span class="p">(</span><span class="s1">&#39;2018-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2019-01-01&#39;</span><span class="p">))</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">                       </span><span class="p">.</span><span class="nx">mean</span><span class="p">()</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">                       </span><span class="p">.</span><span class="nx">clip</span><span class="p">(</span><span class="nx">table</span><span class="p">);</span><span class="w"></span>
 <span class="linenos"> 8</span>
-<span class="linenos"> 9</span>     <span class="kd">var</span> <span class="nx">ndvi</span> <span class="o">=</span> <span class="nx">dataset</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;NDVI&#39;</span><span class="p">);</span>
-<span class="linenos">10</span>     <span class="kd">var</span> <span class="nx">ndviVis</span> <span class="o">=</span> <span class="p">{</span>
-<span class="linenos">11</span>       <span class="nx">min</span><span class="o">:</span> <span class="mf">0.0</span><span class="p">,</span>
-<span class="linenos">12</span>       <span class="nx">max</span><span class="o">:</span> <span class="mf">8000.0</span><span class="p">,</span>
-<span class="linenos">13</span>       <span class="nx">palette</span><span class="o">:</span> <span class="p">[</span>
-<span class="linenos">14</span>         <span class="s1">&#39;FFFFFF&#39;</span><span class="p">,</span> <span class="s1">&#39;CE7E45&#39;</span><span class="p">,</span> <span class="s1">&#39;DF923D&#39;</span><span class="p">,</span> <span class="s1">&#39;F1B555&#39;</span><span class="p">,</span> <span class="s1">&#39;FCD163&#39;</span><span class="p">,</span> <span class="s1">&#39;99B718&#39;</span><span class="p">,</span> <span class="s1">&#39;74A901&#39;</span><span class="p">,</span>
-<span class="linenos">15</span>         <span class="s1">&#39;66A000&#39;</span><span class="p">,</span> <span class="s1">&#39;529400&#39;</span><span class="p">,</span> <span class="s1">&#39;3E8601&#39;</span><span class="p">,</span> <span class="s1">&#39;207401&#39;</span><span class="p">,</span> <span class="s1">&#39;056201&#39;</span><span class="p">,</span> <span class="s1">&#39;004C00&#39;</span><span class="p">,</span> <span class="s1">&#39;023B01&#39;</span><span class="p">,</span>
-<span class="linenos">16</span>         <span class="s1">&#39;012E01&#39;</span><span class="p">,</span> <span class="s1">&#39;011D01&#39;</span><span class="p">,</span> <span class="s1">&#39;011301&#39;</span>
-<span class="linenos">17</span>       <span class="p">],</span>
-<span class="linenos">18</span>     <span class="p">};</span>
-<span class="linenos">19</span>     <span class="nb">Map</span><span class="p">.</span><span class="nx">centerObject</span><span class="p">(</span><span class="nx">table</span><span class="p">);</span>
-<span class="linenos">20</span>     <span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">ndvi</span><span class="p">,</span> <span class="nx">ndviVis</span><span class="p">,</span> <span class="s1">&#39;NDVI&#39;</span><span class="p">);</span>
+<span class="linenos"> 9</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">ndvi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dataset</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;NDVI&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">ndviVis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">       </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">       </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="mf">8000.0</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">       </span><span class="nx">palette</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">         </span><span class="s1">&#39;FFFFFF&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;CE7E45&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;DF923D&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;F1B555&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;FCD163&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;99B718&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;74A901&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">15</span><span class="w">         </span><span class="s1">&#39;66A000&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;529400&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;3E8601&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;207401&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;056201&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;004C00&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;023B01&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">16</span><span class="w">         </span><span class="s1">&#39;012E01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;011D01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;011301&#39;</span><span class="w"></span>
+<span class="linenos">17</span><span class="w">       </span><span class="p">],</span><span class="w"></span>
+<span class="linenos">18</span><span class="w">     </span><span class="p">};</span><span class="w"></span>
+<span class="linenos">19</span><span class="w">     </span><span class="nb">Map</span><span class="p">.</span><span class="nx">centerObject</span><span class="p">(</span><span class="nx">table</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">20</span><span class="w">     </span><span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">ndvi</span><span class="p">,</span><span class="w"> </span><span class="nx">ndviVis</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;NDVI&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="linenos">21</span>
-<span class="linenos">22</span>     <span class="nx">Export</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">toCloudStorage</span><span class="p">({</span>
-<span class="linenos">23</span>     <span class="nx">image</span><span class="o">:</span><span class="nx">ndvi</span><span class="p">,</span>
-<span class="linenos">24</span>     <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;NDVI&#39;</span><span class="p">,</span>
-<span class="linenos">25</span>     <span class="nx">maxPixels</span><span class="o">:</span><span class="mf">1e13</span><span class="p">,</span>
-<span class="linenos">26</span>     <span class="nx">scale</span><span class="o">:</span><span class="mf">250</span><span class="p">,</span>
-<span class="linenos">27</span>     <span class="nx">bucket</span><span class="o">:</span><span class="s1">&#39;oss_ldms_vi&#39;</span><span class="p">,</span>
-<span class="linenos">28</span>     <span class="nx">region</span><span class="o">:</span><span class="nx">table</span>
-<span class="linenos">29</span>     <span class="p">})</span>
+<span class="linenos">22</span><span class="w">     </span><span class="nx">Export</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">toCloudStorage</span><span class="p">({</span><span class="w"></span>
+<span class="linenos">23</span><span class="w">     </span><span class="nx">image</span><span class="o">:</span><span class="nx">ndvi</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">24</span><span class="w">     </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;NDVI&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">25</span><span class="w">     </span><span class="nx">maxPixels</span><span class="o">:</span><span class="mf">1e13</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">26</span><span class="w">     </span><span class="nx">scale</span><span class="o">:</span><span class="mf">250</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">27</span><span class="w">     </span><span class="nx">bucket</span><span class="o">:</span><span class="s1">&#39;oss_ldms_vi&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">28</span><span class="w">     </span><span class="nx">region</span><span class="o">:</span><span class="nx">table</span><span class="w"></span>
+<span class="linenos">29</span><span class="w">     </span><span class="p">})</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="landsat-derived-ndvi-msavi-savi">
-<h2>Landsat derived NDVI, MSAVI, SAVI<a class="headerlink" href="#landsat-derived-ndvi-msavi-savi" title="Permalink to this headline"></a></h2>
+<h2>Landsat derived NDVI, MSAVI, SAVI<a class="headerlink" href="#landsat-derived-ndvi-msavi-savi" title="Permalink to this heading">#</a></h2>
 <section id="id1">
-<h3>Data download from Google Earth Engine<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<h3>Data download from Google Earth Engine<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>Several annual NDVI composite techniques have been discussed to overcome current Landsat 5 artifacts.
 MISLAND uses annual NDVI products based on different percentiles in order to better qualify and quantify the Vegetation Loss Index.</p>
 <p>To compute and download desired percentile composites from google earth engine. Open the <a class="reference external" href="https://code.earthengine.google.com/">Google Earth Engine Code</a> and paste the lines of code provided below</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span> <span class="c1">// Required Data Inputs</span>
-<span class="linenos">  2</span>     <span class="c1">// ===================</span>
-<span class="linenos">  3</span>     <span class="c1">// * USGS/NASA&#39;s Landsat 4 surface reflectance tier 1 dataset (August 1982 - December 1993)</span>
-<span class="linenos">  4</span>     <span class="c1">// * USGS/NASA&#39;s Landsat 5 surface reflectance tier 1 dataset (January 1, 1984 - May 5, 2012)</span>
-<span class="linenos">  5</span>     <span class="c1">// * USGS/NASA&#39;s Landsat 7 surface reflectance tier 1 dataset (January 1, 1999 - December 31, 2019)</span>
-<span class="linenos">  6</span>     <span class="c1">// * USGS/NASA&#39;s Landsat 8 surface reflectance tier 1 dataset (April 11, 2013 - December 31, 2019)</span>
-<span class="linenos">  7</span>     <span class="c1">// * Study Area Polygon</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="w"> </span><span class="c1">// Required Data Inputs</span><span class="w"></span>
+<span class="linenos">  2</span><span class="w">     </span><span class="c1">// ===================</span><span class="w"></span>
+<span class="linenos">  3</span><span class="w">     </span><span class="c1">// * USGS/NASA&#39;s Landsat 4 surface reflectance tier 1 dataset (August 1982 - December 1993)</span><span class="w"></span>
+<span class="linenos">  4</span><span class="w">     </span><span class="c1">// * USGS/NASA&#39;s Landsat 5 surface reflectance tier 1 dataset (January 1, 1984 - May 5, 2012)</span><span class="w"></span>
+<span class="linenos">  5</span><span class="w">     </span><span class="c1">// * USGS/NASA&#39;s Landsat 7 surface reflectance tier 1 dataset (January 1, 1999 - December 31, 2019)</span><span class="w"></span>
+<span class="linenos">  6</span><span class="w">     </span><span class="c1">// * USGS/NASA&#39;s Landsat 8 surface reflectance tier 1 dataset (April 11, 2013 - December 31, 2019)</span><span class="w"></span>
+<span class="linenos">  7</span><span class="w">     </span><span class="c1">// * Study Area Polygon</span><span class="w"></span>
 <span class="linenos">  8</span>
-<span class="linenos">  9</span>     <span class="kd">var</span> <span class="nx">countries</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="s2">&quot;USDOS/LSIB_SIMPLE/2017&quot;</span><span class="p">);</span>
+<span class="linenos">  9</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">countries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="s2">&quot;USDOS/LSIB_SIMPLE/2017&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="linenos"> 10</span>
-<span class="linenos"> 11</span>     <span class="kd">var</span> <span class="nx">Year</span><span class="o">=</span><span class="s1">&#39;2002&#39;</span>
+<span class="linenos"> 11</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">Year</span><span class="o">=</span><span class="s1">&#39;2002&#39;</span><span class="w"></span>
 <span class="linenos"> 12</span>
 <span class="linenos"> 13</span>
-<span class="linenos"> 14</span>     <span class="kd">var</span> <span class="nx">country</span> <span class="o">=</span> <span class="s1">&#39;Libya&#39;</span><span class="p">;</span>
-<span class="linenos"> 15</span>     <span class="kd">var</span> <span class="nx">ALGO</span> <span class="o">=</span> <span class="s2">&quot;PERCENTILE65&quot;</span><span class="p">;</span> <span class="c1">// PERCENTILE75  // PERCENTILE65 // PERCENTILE60 // MEDIAN</span>
-<span class="linenos"> 16</span>     <span class="kd">var</span> <span class="nx">cloudCoveragePercentage</span> <span class="o">=</span> <span class="mf">80</span><span class="p">;</span>
+<span class="linenos"> 14</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Libya&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 15</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">ALGO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;PERCENTILE65&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// PERCENTILE75  // PERCENTILE65 // PERCENTILE60 // MEDIAN</span><span class="w"></span>
+<span class="linenos"> 16</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">cloudCoveragePercentage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">80</span><span class="p">;</span><span class="w"></span>
 <span class="linenos"> 17</span>
 <span class="linenos"> 18</span>
-<span class="linenos"> 19</span>     <span class="kd">var</span> <span class="nx">studyArea</span> <span class="o">=</span> <span class="nx">countries</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;country_na&#39;</span><span class="p">,</span><span class="nx">country</span> <span class="p">))</span>
-<span class="linenos"> 20</span>     <span class="c1">//Map.addLayer(studyArea);</span>
+<span class="linenos"> 19</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">studyArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">countries</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;country_na&#39;</span><span class="p">,</span><span class="nx">country</span><span class="w"> </span><span class="p">))</span><span class="w"></span>
+<span class="linenos"> 20</span><span class="w">     </span><span class="c1">//Map.addLayer(studyArea);</span><span class="w"></span>
 <span class="linenos"> 21</span>
-<span class="linenos"> 22</span>     <span class="cm">/*</span>
+<span class="linenos"> 22</span><span class="w">     </span><span class="cm">/*</span>
 <span class="linenos"> 23</span><span class="cm">     borders are quite coarse</span>
 <span class="linenos"> 24</span><span class="cm">     var northAfrica = ee.FeatureCollection(&#39;users/derickongeri/Admin&#39;)</span>
-<span class="linenos"> 25</span><span class="cm">     // Replace country name with EGYPT, LIBYA, ALGERIA, MAURITANIA, MOROCCO, TUNISIA</span>
-<span class="linenos"> 26</span><span class="cm">     var country = &#39;TUNISIA&#39;;</span>
-<span class="linenos"> 27</span><span class="cm">     var studyArea = northAfrica.filter(ee.Filter.eq(&#39;NAME&#39;, country))</span>
-<span class="linenos"> 28</span><span class="cm">     Map.addLayer(studyArea);</span>
-<span class="linenos"> 29</span><span class="cm">     */</span>
+<span class="linenos"> 25</span><span class="cm">     var country = &#39;TUNISIA&#39;;</span>
+<span class="linenos"> 26</span><span class="cm">     var studyArea = northAfrica.filter(ee.Filter.eq(&#39;NAME&#39;, country))</span>
+<span class="linenos"> 27</span><span class="cm">     Map.addLayer(studyArea);</span>
+<span class="linenos"> 28</span><span class="cm">     */</span><span class="w"></span>
+<span class="linenos"> 29</span>
 <span class="linenos"> 30</span>
 <span class="linenos"> 31</span>
 <span class="linenos"> 32</span>
-<span class="linenos"> 33</span>
-<span class="linenos"> 34</span>     <span class="kd">var</span> <span class="nx">start_date</span> <span class="o">=</span> <span class="nx">Year</span><span class="o">+</span> <span class="s1">&#39;-01-01&#39;</span><span class="p">;</span>
-<span class="linenos"> 35</span>     <span class="kd">var</span> <span class="nx">end_date</span>   <span class="o">=</span> <span class="nx">Year</span><span class="o">+</span> <span class="s1">&#39;-12-31&#39;</span><span class="p">;</span>
+<span class="linenos"> 33</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">start_date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Year</span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;-01-01&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 34</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">end_date</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nx">Year</span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;-12-31&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 35</span>
 <span class="linenos"> 36</span>
-<span class="linenos"> 37</span>
-<span class="linenos"> 38</span>     <span class="c1">//--------------------------------------------------------------------</span>
-<span class="linenos"> 39</span>     <span class="c1">//       Landsat 4, 5, 7 cloudmask</span>
-<span class="linenos"> 40</span>     <span class="c1">//--------------------------------------------------------------------</span>
-<span class="linenos"> 41</span>
-<span class="linenos"> 42</span>         <span class="c1">// If the cloud bit (5) is set and the cloud confidence (7) is high</span>
-<span class="linenos"> 43</span>         <span class="c1">// or the cloud shadow bit is set (3), then it&#39;s a bad pixel.</span>
-<span class="linenos"> 44</span>     <span class="kd">var</span> <span class="nx">cloudMaskL7</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos"> 45</span>       <span class="kd">var</span> <span class="nx">qa</span> <span class="o">=</span> <span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;pixel_qa&#39;</span><span class="p">);</span>
-<span class="linenos"> 46</span>       <span class="kd">var</span> <span class="nx">cloud</span> <span class="o">=</span> <span class="nx">qa</span><span class="p">.</span><span class="nx">bitwiseAnd</span><span class="p">(</span><span class="mf">1</span> <span class="o">&lt;&lt;</span> <span class="mf">5</span><span class="p">)</span>
-<span class="linenos"> 47</span>                       <span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">qa</span><span class="p">.</span><span class="nx">bitwiseAnd</span><span class="p">(</span><span class="mf">1</span> <span class="o">&lt;&lt;</span> <span class="mf">7</span><span class="p">))</span>
-<span class="linenos"> 48</span>                       <span class="p">.</span><span class="nx">or</span><span class="p">(</span><span class="nx">qa</span><span class="p">.</span><span class="nx">bitwiseAnd</span><span class="p">(</span><span class="mf">1</span> <span class="o">&lt;&lt;</span> <span class="mf">3</span><span class="p">));</span>
-<span class="linenos"> 49</span>
-<span class="linenos"> 50</span>         <span class="c1">// Remove edge pixels that don&#39;t occur in all bands</span>
-<span class="linenos"> 51</span>       <span class="c1">//var mask2 = image.mask().reduce(ee.Reducer.min())//.focal_min(300,&#39;square&#39;,&#39;meters&#39;).eq(0);</span>
-<span class="linenos"> 52</span>       <span class="c1">//var mask2 = image.select(&#39;B4&#39;).reduce(ee.Reducer.min()).gt(0)//.focal_min(500,&#39;square&#39;,&#39;meters&#39;);</span>
-<span class="linenos"> 53</span>       <span class="c1">// Remove edge pixels that don&#39;t occur in all bands</span>
-<span class="linenos"> 54</span>       <span class="kd">var</span> <span class="nx">mask3</span> <span class="o">=</span>
-<span class="linenos"> 55</span>                   <span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B3&#39;</span><span class="p">).</span><span class="nx">gt</span><span class="p">(</span><span class="mf">100</span><span class="p">))</span>
-<span class="linenos"> 56</span>                   <span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">).</span><span class="nx">gt</span><span class="p">(</span><span class="mf">100</span><span class="p">))</span>
+<span class="linenos"> 37</span><span class="w">     </span><span class="c1">//--------------------------------------------------------------------</span><span class="w"></span>
+<span class="linenos"> 38</span><span class="w">     </span><span class="c1">//       Landsat 4, 5, 7 cloudmask</span><span class="w"></span>
+<span class="linenos"> 39</span><span class="w">     </span><span class="c1">//--------------------------------------------------------------------</span><span class="w"></span>
+<span class="linenos"> 40</span>
+<span class="linenos"> 41</span><span class="w">         </span><span class="c1">// If the cloud bit (5) is set and the cloud confidence (7) is high</span><span class="w"></span>
+<span class="linenos"> 42</span><span class="w">         </span><span class="c1">// or the cloud shadow bit is set (3), then it&#39;s a bad pixel.</span><span class="w"></span>
+<span class="linenos"> 43</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">cloudMaskL7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 44</span><span class="w">       </span><span class="kd">var</span><span class="w"> </span><span class="nx">qa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;pixel_qa&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 45</span><span class="w">       </span><span class="kd">var</span><span class="w"> </span><span class="nx">cloud</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">qa</span><span class="p">.</span><span class="nx">bitwiseAnd</span><span class="p">(</span><span class="mf">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 46</span><span class="w">                       </span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">qa</span><span class="p">.</span><span class="nx">bitwiseAnd</span><span class="p">(</span><span class="mf">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">7</span><span class="p">))</span><span class="w"></span>
+<span class="linenos"> 47</span><span class="w">                       </span><span class="p">.</span><span class="nx">or</span><span class="p">(</span><span class="nx">qa</span><span class="p">.</span><span class="nx">bitwiseAnd</span><span class="p">(</span><span class="mf">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">3</span><span class="p">));</span><span class="w"></span>
+<span class="linenos"> 48</span>
+<span class="linenos"> 49</span><span class="w">         </span><span class="c1">// Remove edge pixels that don&#39;t occur in all bands</span><span class="w"></span>
+<span class="linenos"> 50</span><span class="w">       </span><span class="c1">//var mask2 = image.mask().reduce(ee.Reducer.min())//.focal_min(300,&#39;square&#39;,&#39;meters&#39;).eq(0);</span><span class="w"></span>
+<span class="linenos"> 51</span><span class="w">       </span><span class="c1">//var mask2 = image.select(&#39;B4&#39;).reduce(ee.Reducer.min()).gt(0)//.focal_min(500,&#39;square&#39;,&#39;meters&#39;);</span><span class="w"></span>
+<span class="linenos"> 52</span><span class="w">       </span><span class="c1">// Remove edge pixels that don&#39;t occur in all bands</span><span class="w"></span>
+<span class="linenos"> 53</span><span class="w">       </span><span class="kd">var</span><span class="w"> </span><span class="nx">mask3</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="linenos"> 54</span><span class="w">                   </span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B3&#39;</span><span class="p">).</span><span class="nx">gt</span><span class="p">(</span><span class="mf">100</span><span class="p">))</span><span class="w"></span>
+<span class="linenos"> 55</span><span class="w">                   </span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">).</span><span class="nx">gt</span><span class="p">(</span><span class="mf">100</span><span class="p">))</span><span class="w"></span>
+<span class="linenos"> 56</span>
 <span class="linenos"> 57</span>
-<span class="linenos"> 58</span>
-<span class="linenos"> 59</span>                   <span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">).</span><span class="nx">lt</span><span class="p">(</span><span class="mf">10000</span><span class="p">))</span>
-<span class="linenos"> 60</span>                   <span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B3&#39;</span><span class="p">).</span><span class="nx">lt</span><span class="p">(</span><span class="mf">10000</span><span class="p">))</span>
+<span class="linenos"> 58</span><span class="w">                   </span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">).</span><span class="nx">lt</span><span class="p">(</span><span class="mf">10000</span><span class="p">))</span><span class="w"></span>
+<span class="linenos"> 59</span><span class="w">                   </span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B3&#39;</span><span class="p">).</span><span class="nx">lt</span><span class="p">(</span><span class="mf">10000</span><span class="p">))</span><span class="w"></span>
+<span class="linenos"> 60</span>
 <span class="linenos"> 61</span>
 <span class="linenos"> 62</span>
-<span class="linenos"> 63</span>
-<span class="linenos"> 64</span>       <span class="k">return</span> <span class="nx">image</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">cloud</span><span class="p">.</span><span class="nx">not</span><span class="p">()).</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">mask3</span><span class="p">)</span><span class="c1">//.updateMask(mask2)//.clip(image.geometry().buffer(-5000))//.or(mask3));</span>
-<span class="linenos"> 65</span>     <span class="p">};</span>
+<span class="linenos"> 63</span><span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">cloud</span><span class="p">.</span><span class="nx">not</span><span class="p">()).</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">mask3</span><span class="p">)</span><span class="c1">//.updateMask(mask2)//.clip(image.geometry().buffer(-5000))//.or(mask3));</span><span class="w"></span>
+<span class="linenos"> 64</span><span class="w">     </span><span class="p">};</span><span class="w"></span>
+<span class="linenos"> 65</span>
 <span class="linenos"> 66</span>
-<span class="linenos"> 67</span>
-<span class="linenos"> 68</span>     <span class="kd">var</span> <span class="nx">cloudMaskL45</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos"> 69</span>       <span class="kd">var</span> <span class="nx">qa</span> <span class="o">=</span> <span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;pixel_qa&#39;</span><span class="p">);</span>
-<span class="linenos"> 70</span>       <span class="kd">var</span> <span class="nx">cloud</span> <span class="o">=</span> <span class="nx">qa</span><span class="p">.</span><span class="nx">bitwiseAnd</span><span class="p">(</span><span class="mf">1</span> <span class="o">&lt;&lt;</span> <span class="mf">5</span><span class="p">)</span>
-<span class="linenos"> 71</span>                       <span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">qa</span><span class="p">.</span><span class="nx">bitwiseAnd</span><span class="p">(</span><span class="mf">1</span> <span class="o">&lt;&lt;</span> <span class="mf">7</span><span class="p">))</span>
-<span class="linenos"> 72</span>                       <span class="p">.</span><span class="nx">or</span><span class="p">(</span><span class="nx">qa</span><span class="p">.</span><span class="nx">bitwiseAnd</span><span class="p">(</span><span class="mf">1</span> <span class="o">&lt;&lt;</span> <span class="mf">3</span><span class="p">));</span>
-<span class="linenos"> 73</span>
-<span class="linenos"> 74</span>       <span class="c1">// Remove edge pixels that don&#39;t occur in all bands</span>
-<span class="linenos"> 75</span>       <span class="c1">//var mask2 = image.mask().reduce(ee.Reducer.min());</span>
-<span class="linenos"> 76</span>         <span class="kd">var</span> <span class="nx">mask2</span> <span class="o">=</span>
-<span class="linenos"> 77</span>                   <span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B3&#39;</span><span class="p">).</span><span class="nx">gt</span><span class="p">(</span><span class="mf">100</span><span class="p">))</span>
-<span class="linenos"> 78</span>                   <span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">).</span><span class="nx">gt</span><span class="p">(</span><span class="mf">100</span><span class="p">))</span>
+<span class="linenos"> 67</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">cloudMaskL45</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 68</span><span class="w">       </span><span class="kd">var</span><span class="w"> </span><span class="nx">qa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;pixel_qa&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 69</span><span class="w">       </span><span class="kd">var</span><span class="w"> </span><span class="nx">cloud</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">qa</span><span class="p">.</span><span class="nx">bitwiseAnd</span><span class="p">(</span><span class="mf">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 70</span><span class="w">                       </span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">qa</span><span class="p">.</span><span class="nx">bitwiseAnd</span><span class="p">(</span><span class="mf">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">7</span><span class="p">))</span><span class="w"></span>
+<span class="linenos"> 71</span><span class="w">                       </span><span class="p">.</span><span class="nx">or</span><span class="p">(</span><span class="nx">qa</span><span class="p">.</span><span class="nx">bitwiseAnd</span><span class="p">(</span><span class="mf">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">3</span><span class="p">));</span><span class="w"></span>
+<span class="linenos"> 72</span>
+<span class="linenos"> 73</span><span class="w">       </span><span class="c1">// Remove edge pixels that don&#39;t occur in all bands</span><span class="w"></span>
+<span class="linenos"> 74</span><span class="w">       </span><span class="c1">//var mask2 = image.mask().reduce(ee.Reducer.min());</span><span class="w"></span>
+<span class="linenos"> 75</span><span class="w">         </span><span class="kd">var</span><span class="w"> </span><span class="nx">mask2</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="linenos"> 76</span><span class="w">                   </span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B3&#39;</span><span class="p">).</span><span class="nx">gt</span><span class="p">(</span><span class="mf">100</span><span class="p">))</span><span class="w"></span>
+<span class="linenos"> 77</span><span class="w">                   </span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">).</span><span class="nx">gt</span><span class="p">(</span><span class="mf">100</span><span class="p">))</span><span class="w"></span>
+<span class="linenos"> 78</span>
 <span class="linenos"> 79</span>
-<span class="linenos"> 80</span>
-<span class="linenos"> 81</span>                   <span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">).</span><span class="nx">lt</span><span class="p">(</span><span class="mf">10000</span><span class="p">))</span>
-<span class="linenos"> 82</span>                   <span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B3&#39;</span><span class="p">).</span><span class="nx">lt</span><span class="p">(</span><span class="mf">10000</span><span class="p">))</span>
-<span class="linenos"> 83</span>
-<span class="linenos"> 84</span>       <span class="k">return</span> <span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">cloud</span><span class="p">.</span><span class="nx">not</span><span class="p">()).</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">mask2</span><span class="p">))</span><span class="c1">//.clip(image.geometry().buffer(-5000))//.updateMask(mask2);</span>
-<span class="linenos"> 85</span>     <span class="p">};</span>
+<span class="linenos"> 80</span><span class="w">                   </span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">).</span><span class="nx">lt</span><span class="p">(</span><span class="mf">10000</span><span class="p">))</span><span class="w"></span>
+<span class="linenos"> 81</span><span class="w">                   </span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B3&#39;</span><span class="p">).</span><span class="nx">lt</span><span class="p">(</span><span class="mf">10000</span><span class="p">))</span><span class="w"></span>
+<span class="linenos"> 82</span>
+<span class="linenos"> 83</span><span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">cloud</span><span class="p">.</span><span class="nx">not</span><span class="p">()).</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">mask2</span><span class="p">))</span><span class="c1">//.clip(image.geometry().buffer(-5000))//.updateMask(mask2);</span><span class="w"></span>
+<span class="linenos"> 84</span><span class="w">     </span><span class="p">};</span><span class="w"></span>
+<span class="linenos"> 85</span>
 <span class="linenos"> 86</span>
-<span class="linenos"> 87</span>
-<span class="linenos"> 88</span>     <span class="c1">//--------------------------------------------------------------------</span>
-<span class="linenos"> 89</span>     <span class="c1">//         Landsat 8 cloudmask</span>
-<span class="linenos"> 90</span>     <span class="c1">//--------------------------------------------------------------------</span>
-<span class="linenos"> 91</span>
-<span class="linenos"> 92</span>         <span class="c1">// Bits 3 and 5 are cloud shadow and cloud, respectively.</span>
-<span class="linenos"> 93</span>     <span class="kd">function</span> <span class="nx">maskL8sr</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos"> 94</span>       <span class="kd">var</span> <span class="nx">cloudShadowBitMask</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1</span> <span class="o">&lt;&lt;</span> <span class="mf">3</span><span class="p">);</span>
-<span class="linenos"> 95</span>       <span class="kd">var</span> <span class="nx">cloudsBitMask</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1</span> <span class="o">&lt;&lt;</span> <span class="mf">5</span><span class="p">);</span>
-<span class="linenos"> 96</span>
-<span class="linenos"> 97</span>         <span class="c1">// Get the pixel QA band.</span>
-<span class="linenos"> 98</span>       <span class="kd">var</span> <span class="nx">qa</span> <span class="o">=</span> <span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;pixel_qa&#39;</span><span class="p">);</span>
-<span class="linenos"> 99</span>
-<span class="linenos">100</span>         <span class="c1">// Both flags should be set to zero, indicating clear conditions.</span>
-<span class="linenos">101</span>       <span class="kd">var</span> <span class="nx">mask</span> <span class="o">=</span> <span class="nx">qa</span><span class="p">.</span><span class="nx">bitwiseAnd</span><span class="p">(</span><span class="nx">cloudShadowBitMask</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mf">0</span><span class="p">)</span>
-<span class="linenos">102</span>                      <span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">qa</span><span class="p">.</span><span class="nx">bitwiseAnd</span><span class="p">(</span><span class="nx">cloudsBitMask</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mf">0</span><span class="p">));</span>
-<span class="linenos">103</span>       <span class="kd">var</span> <span class="nx">mask2</span> <span class="o">=</span>
-<span class="linenos">104</span>
-<span class="linenos">105</span>                   <span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B5&#39;</span><span class="p">).</span><span class="nx">gt</span><span class="p">(</span><span class="mf">100</span><span class="p">))</span>
-<span class="linenos">106</span>                   <span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">).</span><span class="nx">gt</span><span class="p">(</span><span class="mf">100</span><span class="p">))</span>
+<span class="linenos"> 87</span><span class="w">     </span><span class="c1">//--------------------------------------------------------------------</span><span class="w"></span>
+<span class="linenos"> 88</span><span class="w">     </span><span class="c1">//         Landsat 8 cloudmask</span><span class="w"></span>
+<span class="linenos"> 89</span><span class="w">     </span><span class="c1">//--------------------------------------------------------------------</span><span class="w"></span>
+<span class="linenos"> 90</span>
+<span class="linenos"> 91</span><span class="w">         </span><span class="c1">// Bits 3 and 5 are cloud shadow and cloud, respectively.</span><span class="w"></span>
+<span class="linenos"> 92</span><span class="w">     </span><span class="kd">function</span><span class="w"> </span><span class="nx">maskL8sr</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 93</span><span class="w">       </span><span class="kd">var</span><span class="w"> </span><span class="nx">cloudShadowBitMask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 94</span><span class="w">       </span><span class="kd">var</span><span class="w"> </span><span class="nx">cloudsBitMask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 95</span>
+<span class="linenos"> 96</span><span class="w">         </span><span class="c1">// Get the pixel QA band.</span><span class="w"></span>
+<span class="linenos"> 97</span><span class="w">       </span><span class="kd">var</span><span class="w"> </span><span class="nx">qa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;pixel_qa&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 98</span>
+<span class="linenos"> 99</span><span class="w">         </span><span class="c1">// Both flags should be set to zero, indicating clear conditions.</span><span class="w"></span>
+<span class="linenos">100</span><span class="w">       </span><span class="kd">var</span><span class="w"> </span><span class="nx">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">qa</span><span class="p">.</span><span class="nx">bitwiseAnd</span><span class="p">(</span><span class="nx">cloudShadowBitMask</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mf">0</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">101</span><span class="w">                      </span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">qa</span><span class="p">.</span><span class="nx">bitwiseAnd</span><span class="p">(</span><span class="nx">cloudsBitMask</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mf">0</span><span class="p">));</span><span class="w"></span>
+<span class="linenos">102</span><span class="w">       </span><span class="kd">var</span><span class="w"> </span><span class="nx">mask2</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="linenos">103</span>
+<span class="linenos">104</span><span class="w">                   </span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B5&#39;</span><span class="p">).</span><span class="nx">gt</span><span class="p">(</span><span class="mf">100</span><span class="p">))</span><span class="w"></span>
+<span class="linenos">105</span><span class="w">                   </span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">).</span><span class="nx">gt</span><span class="p">(</span><span class="mf">100</span><span class="p">))</span><span class="w"></span>
+<span class="linenos">106</span>
 <span class="linenos">107</span>
-<span class="linenos">108</span>
-<span class="linenos">109</span>                   <span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B5&#39;</span><span class="p">).</span><span class="nx">lt</span><span class="p">(</span><span class="mf">10000</span><span class="p">))</span>
-<span class="linenos">110</span>                   <span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">).</span><span class="nx">lt</span><span class="p">(</span><span class="mf">10000</span><span class="p">))</span>
-<span class="linenos">111</span>
-<span class="linenos">112</span>        <span class="c1">//var mask2 = image.mask().reduce(ee.Reducer.min()).focal_min(500,&#39;square&#39;,&#39;meters&#39;);</span>
-<span class="linenos">113</span>       <span class="c1">//return image</span>
-<span class="linenos">114</span>       <span class="k">return</span> <span class="nx">image</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">mask</span><span class="p">).</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">mask2</span><span class="p">)</span><span class="c1">//.clip(image.geometry().buffer(-5000));</span>
-<span class="linenos">115</span>     <span class="p">}</span>
+<span class="linenos">108</span><span class="w">                   </span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B5&#39;</span><span class="p">).</span><span class="nx">lt</span><span class="p">(</span><span class="mf">10000</span><span class="p">))</span><span class="w"></span>
+<span class="linenos">109</span><span class="w">                   </span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">).</span><span class="nx">lt</span><span class="p">(</span><span class="mf">10000</span><span class="p">))</span><span class="w"></span>
+<span class="linenos">110</span>
+<span class="linenos">111</span><span class="w">        </span><span class="c1">//var mask2 = image.mask().reduce(ee.Reducer.min()).focal_min(500,&#39;square&#39;,&#39;meters&#39;);</span><span class="w"></span>
+<span class="linenos">112</span><span class="w">       </span><span class="c1">//return image</span><span class="w"></span>
+<span class="linenos">113</span><span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">mask</span><span class="p">).</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">mask2</span><span class="p">)</span><span class="c1">//.clip(image.geometry().buffer(-5000));</span><span class="w"></span>
+<span class="linenos">114</span><span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">115</span>
 <span class="linenos">116</span>
 <span class="linenos">117</span>
 <span class="linenos">118</span>
-<span class="linenos">119</span>
-<span class="linenos">120</span>         <span class="c1">// Apply Cloudmask to L4.5.7</span>
-<span class="linenos">121</span>     <span class="kd">var</span> <span class="nx">L4</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s2">&quot;LANDSAT/LT04/C01/T1_SR&quot;</span><span class="p">)</span>
-<span class="linenos">122</span>                       <span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="nx">start_date</span><span class="p">,</span> <span class="nx">end_date</span><span class="p">)</span>
-<span class="linenos">123</span>                       <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">lessThan</span><span class="p">(</span><span class="s1">&#39;CLOUD_COVER_LAND&#39;</span><span class="p">,</span> <span class="nx">cloudCoveragePercentage</span><span class="p">))</span>
-<span class="linenos">124</span>                       <span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">studyArea</span><span class="p">)</span>
-<span class="linenos">125</span>                       <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">cloudMaskL45</span><span class="p">)</span>
-<span class="linenos">126</span>                       <span class="p">.</span><span class="nx">select</span><span class="p">([</span><span class="s1">&#39;B3&#39;</span><span class="p">,</span> <span class="s1">&#39;B4&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;RED&#39;</span><span class="p">,</span> <span class="s1">&#39;NIR&#39;</span><span class="p">]);;</span>
-<span class="linenos">127</span>
-<span class="linenos">128</span>     <span class="kd">var</span> <span class="nx">L5</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;LANDSAT/LT05/C01/T1_SR&#39;</span><span class="p">)</span>
-<span class="linenos">129</span>                       <span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="nx">start_date</span><span class="p">,</span> <span class="nx">end_date</span><span class="p">)</span>
-<span class="linenos">130</span>                       <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">lessThan</span><span class="p">(</span><span class="s1">&#39;CLOUD_COVER_LAND&#39;</span><span class="p">,</span> <span class="nx">cloudCoveragePercentage</span><span class="p">))</span>
-<span class="linenos">131</span>                       <span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">studyArea</span><span class="p">)</span>
-<span class="linenos">132</span>                       <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">cloudMaskL45</span><span class="p">)</span>
-<span class="linenos">133</span>                       <span class="p">.</span><span class="nx">select</span><span class="p">([</span><span class="s1">&#39;B3&#39;</span><span class="p">,</span> <span class="s1">&#39;B4&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;RED&#39;</span><span class="p">,</span> <span class="s1">&#39;NIR&#39;</span><span class="p">]);;</span>
-<span class="linenos">134</span>
-<span class="linenos">135</span>     <span class="kd">var</span> <span class="nx">L7a</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;LANDSAT/LE07/C01/T1_SR&#39;</span><span class="p">)</span>
-<span class="linenos">136</span>                       <span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="s1">&#39;1999-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2003-04-01&#39;</span><span class="p">)</span>
-<span class="linenos">137</span>                       <span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="nx">start_date</span><span class="p">,</span> <span class="nx">end_date</span><span class="p">)</span>
-<span class="linenos">138</span>                       <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">lessThan</span><span class="p">(</span><span class="s1">&#39;CLOUD_COVER_LAND&#39;</span><span class="p">,</span> <span class="mf">100</span><span class="p">))</span>
-<span class="linenos">139</span>                       <span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">studyArea</span><span class="p">)</span>
-<span class="linenos">140</span>                       <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">cloudMaskL7</span><span class="p">)</span>
-<span class="linenos">141</span>                       <span class="p">.</span><span class="nx">select</span><span class="p">([</span><span class="s1">&#39;B3&#39;</span><span class="p">,</span> <span class="s1">&#39;B4&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;RED&#39;</span><span class="p">,</span> <span class="s1">&#39;NIR&#39;</span><span class="p">]);;</span>
-<span class="linenos">142</span>     <span class="kd">var</span> <span class="nx">L7b</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;LANDSAT/LE07/C01/T1_SR&#39;</span><span class="p">)</span>
-<span class="linenos">143</span>                       <span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="s1">&#39;2012-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2013-12-31&#39;</span><span class="p">)</span>
-<span class="linenos">144</span>                       <span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="nx">start_date</span><span class="p">,</span> <span class="nx">end_date</span><span class="p">)</span>
-<span class="linenos">145</span>                       <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">lessThan</span><span class="p">(</span><span class="s1">&#39;CLOUD_COVER_LAND&#39;</span><span class="p">,</span> <span class="mf">100</span><span class="p">))</span>
-<span class="linenos">146</span>                       <span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">studyArea</span><span class="p">)</span>
-<span class="linenos">147</span>                       <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">cloudMaskL7</span><span class="p">)</span>
-<span class="linenos">148</span>                       <span class="p">.</span><span class="nx">select</span><span class="p">([</span><span class="s1">&#39;B3&#39;</span><span class="p">,</span> <span class="s1">&#39;B4&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;RED&#39;</span><span class="p">,</span> <span class="s1">&#39;NIR&#39;</span><span class="p">]);;</span>
-<span class="linenos">149</span>
-<span class="linenos">150</span>     <span class="kd">var</span> <span class="nx">L7</span> <span class="o">=</span> <span class="nx">L7a</span><span class="p">.</span><span class="nx">merge</span><span class="p">(</span><span class="nx">L7b</span><span class="p">);</span>
-<span class="linenos">151</span>
-<span class="linenos">152</span>     <span class="kd">var</span> <span class="nx">L8</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;LANDSAT/LC08/C01/T1_SR&#39;</span><span class="p">)</span>
-<span class="linenos">153</span>                       <span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="nx">start_date</span><span class="p">,</span> <span class="nx">end_date</span><span class="p">)</span>
-<span class="linenos">154</span>                       <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">lessThan</span><span class="p">(</span><span class="s1">&#39;CLOUD_COVER&#39;</span><span class="p">,</span> <span class="nx">cloudCoveragePercentage</span><span class="p">))</span>
-<span class="linenos">155</span>                       <span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">studyArea</span><span class="p">)</span>
-<span class="linenos">156</span>                       <span class="c1">//.filterBounds(AOI)</span>
-<span class="linenos">157</span>                       <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">maskL8sr</span><span class="p">)</span>
-<span class="linenos">158</span>                       <span class="p">.</span><span class="nx">select</span><span class="p">([</span><span class="s1">&#39;B4&#39;</span><span class="p">,</span> <span class="s1">&#39;B5&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;RED&#39;</span><span class="p">,</span> <span class="s1">&#39;NIR&#39;</span><span class="p">]);</span>
+<span class="linenos">119</span><span class="w">         </span><span class="c1">// Apply Cloudmask to L4.5.7</span><span class="w"></span>
+<span class="linenos">120</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">L4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s2">&quot;LANDSAT/LT04/C01/T1_SR&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">121</span><span class="w">                       </span><span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="nx">start_date</span><span class="p">,</span><span class="w"> </span><span class="nx">end_date</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">122</span><span class="w">                       </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">lessThan</span><span class="p">(</span><span class="s1">&#39;CLOUD_COVER_LAND&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">cloudCoveragePercentage</span><span class="p">))</span><span class="w"></span>
+<span class="linenos">123</span><span class="w">                       </span><span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">studyArea</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">124</span><span class="w">                       </span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">cloudMaskL45</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">125</span><span class="w">                       </span><span class="p">.</span><span class="nx">select</span><span class="p">([</span><span class="s1">&#39;B3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;B4&#39;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;RED&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;NIR&#39;</span><span class="p">]);;</span><span class="w"></span>
+<span class="linenos">126</span>
+<span class="linenos">127</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">L5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;LANDSAT/LT05/C01/T1_SR&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">128</span><span class="w">                       </span><span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="nx">start_date</span><span class="p">,</span><span class="w"> </span><span class="nx">end_date</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">129</span><span class="w">                       </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">lessThan</span><span class="p">(</span><span class="s1">&#39;CLOUD_COVER_LAND&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">cloudCoveragePercentage</span><span class="p">))</span><span class="w"></span>
+<span class="linenos">130</span><span class="w">                       </span><span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">studyArea</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">131</span><span class="w">                       </span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">cloudMaskL45</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">132</span><span class="w">                       </span><span class="p">.</span><span class="nx">select</span><span class="p">([</span><span class="s1">&#39;B3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;B4&#39;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;RED&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;NIR&#39;</span><span class="p">]);;</span><span class="w"></span>
+<span class="linenos">133</span>
+<span class="linenos">134</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">L7a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;LANDSAT/LE07/C01/T1_SR&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">135</span><span class="w">                       </span><span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="s1">&#39;1999-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2003-04-01&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">136</span><span class="w">                       </span><span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="nx">start_date</span><span class="p">,</span><span class="w"> </span><span class="nx">end_date</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">137</span><span class="w">                       </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">lessThan</span><span class="p">(</span><span class="s1">&#39;CLOUD_COVER_LAND&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">))</span><span class="w"></span>
+<span class="linenos">138</span><span class="w">                       </span><span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">studyArea</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">139</span><span class="w">                       </span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">cloudMaskL7</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">140</span><span class="w">                       </span><span class="p">.</span><span class="nx">select</span><span class="p">([</span><span class="s1">&#39;B3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;B4&#39;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;RED&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;NIR&#39;</span><span class="p">]);;</span><span class="w"></span>
+<span class="linenos">141</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">L7b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;LANDSAT/LE07/C01/T1_SR&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">142</span><span class="w">                       </span><span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="s1">&#39;2012-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2013-12-31&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">143</span><span class="w">                       </span><span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="nx">start_date</span><span class="p">,</span><span class="w"> </span><span class="nx">end_date</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">144</span><span class="w">                       </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">lessThan</span><span class="p">(</span><span class="s1">&#39;CLOUD_COVER_LAND&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">))</span><span class="w"></span>
+<span class="linenos">145</span><span class="w">                       </span><span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">studyArea</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">146</span><span class="w">                       </span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">cloudMaskL7</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">147</span><span class="w">                       </span><span class="p">.</span><span class="nx">select</span><span class="p">([</span><span class="s1">&#39;B3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;B4&#39;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;RED&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;NIR&#39;</span><span class="p">]);;</span><span class="w"></span>
+<span class="linenos">148</span>
+<span class="linenos">149</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">L7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L7a</span><span class="p">.</span><span class="nx">merge</span><span class="p">(</span><span class="nx">L7b</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">150</span>
+<span class="linenos">151</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">L8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;LANDSAT/LC08/C01/T1_SR&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">152</span><span class="w">                       </span><span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="nx">start_date</span><span class="p">,</span><span class="w"> </span><span class="nx">end_date</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">153</span><span class="w">                       </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">lessThan</span><span class="p">(</span><span class="s1">&#39;CLOUD_COVER&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">cloudCoveragePercentage</span><span class="p">))</span><span class="w"></span>
+<span class="linenos">154</span><span class="w">                       </span><span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">studyArea</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">155</span><span class="w">                       </span><span class="c1">//.filterBounds(AOI)</span><span class="w"></span>
+<span class="linenos">156</span><span class="w">                       </span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">maskL8sr</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">157</span><span class="w">                       </span><span class="p">.</span><span class="nx">select</span><span class="p">([</span><span class="s1">&#39;B4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;B5&#39;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;RED&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;NIR&#39;</span><span class="p">]);</span><span class="w"></span>
+<span class="linenos">158</span>
 <span class="linenos">159</span>
 <span class="linenos">160</span>
 <span class="linenos">161</span>
 <span class="linenos">162</span>
 <span class="linenos">163</span>
-<span class="linenos">164</span>
-<span class="linenos">165</span>         <span class="c1">//Define collection</span>
+<span class="linenos">164</span><span class="w">         </span><span class="c1">//Define collection</span><span class="w"></span>
+<span class="linenos">165</span>
 <span class="linenos">166</span>
-<span class="linenos">167</span>
-<span class="linenos">168</span>     <span class="c1">//--------------------------------------------------------------------</span>
-<span class="linenos">169</span>     <span class="c1">// Merge Landsat 4, 5, 8 imagery collections and filter all by date/place</span>
-<span class="linenos">170</span>     <span class="c1">//--------------------------------------------------------------------</span>
-<span class="linenos">171</span>
-<span class="linenos">172</span>     <span class="c1">//Merge Landsat 4, 5 , 7 &#39;</span>
-<span class="linenos">173</span>
-<span class="linenos">174</span>     <span class="kd">var</span> <span class="nx">L4578</span> <span class="o">=</span> <span class="nx">L4</span><span class="p">.</span><span class="nx">merge</span><span class="p">(</span><span class="nx">L5</span><span class="p">).</span><span class="nx">merge</span><span class="p">(</span><span class="nx">L7</span><span class="p">).</span><span class="nx">merge</span><span class="p">(</span><span class="nx">L8</span><span class="p">);</span>
+<span class="linenos">167</span><span class="w">     </span><span class="c1">//--------------------------------------------------------------------</span><span class="w"></span>
+<span class="linenos">168</span><span class="w">     </span><span class="c1">// Merge Landsat 4, 5, 8 imagery collections and filter all by date/place</span><span class="w"></span>
+<span class="linenos">169</span><span class="w">     </span><span class="c1">//--------------------------------------------------------------------</span><span class="w"></span>
+<span class="linenos">170</span>
+<span class="linenos">171</span><span class="w">     </span><span class="c1">//Merge Landsat 4, 5 , 7 &#39;</span><span class="w"></span>
+<span class="linenos">172</span>
+<span class="linenos">173</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">L4578</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L4</span><span class="p">.</span><span class="nx">merge</span><span class="p">(</span><span class="nx">L5</span><span class="p">).</span><span class="nx">merge</span><span class="p">(</span><span class="nx">L7</span><span class="p">).</span><span class="nx">merge</span><span class="p">(</span><span class="nx">L8</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">174</span>
 <span class="linenos">175</span>
-<span class="linenos">176</span>
-<span class="linenos">177</span>     <span class="c1">//--------------------------------------------------------------------</span>
-<span class="linenos">178</span>     <span class="c1">//                     Create NDVI Collection</span>
-<span class="linenos">179</span>     <span class="c1">//--------------------------------------------------------------------</span>
-<span class="linenos">180</span>
-<span class="linenos">181</span>     <span class="kd">var</span> <span class="nx">NDVI</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos">182</span>       <span class="k">return</span> <span class="nx">image</span><span class="p">.</span><span class="nx">normalizedDifference</span><span class="p">([</span><span class="s1">&#39;NIR&#39;</span><span class="p">,</span> <span class="s1">&#39;RED&#39;</span><span class="p">]).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;NDVI&#39;</span><span class="p">);</span>
-<span class="linenos">183</span>       <span class="c1">//return image.addBands(ndvi);</span>
-<span class="linenos">184</span>     <span class="p">};</span>
-<span class="linenos">185</span>
-<span class="linenos">186</span>     <span class="k">if</span> <span class="p">(</span><span class="nx">ALGO</span><span class="o">==</span><span class="s1">&#39;MEDIAN&#39;</span><span class="p">){</span>
-<span class="linenos">187</span>         <span class="kd">var</span> <span class="nx">suffix</span> <span class="o">=</span> <span class="s1">&#39;median&#39;</span><span class="p">;</span>
-<span class="linenos">188</span>         <span class="kd">var</span> <span class="nx">annualNDVI</span> <span class="o">=</span> <span class="nx">L4578</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">NDVI</span><span class="p">).</span><span class="nx">median</span><span class="p">().</span><span class="nx">clip</span><span class="p">(</span><span class="nx">studyArea</span><span class="p">);</span>
-<span class="linenos">189</span>     <span class="p">}</span>
-<span class="linenos">190</span>
-<span class="linenos">191</span>     <span class="k">if</span> <span class="p">(</span><span class="nx">ALGO</span><span class="o">==</span><span class="s1">&#39;PERCENTILE75&#39;</span><span class="p">){</span>
-<span class="linenos">192</span>         <span class="kd">var</span> <span class="nx">suffix</span> <span class="o">=</span> <span class="s1">&#39;75pc&#39;</span><span class="p">;</span>
-<span class="linenos">193</span>         <span class="kd">var</span> <span class="nx">annualNDVI</span> <span class="o">=</span> <span class="nx">L4578</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">NDVI</span><span class="p">).</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">percentile</span><span class="p">([</span><span class="mf">75</span><span class="p">])).</span><span class="nx">clip</span><span class="p">(</span><span class="nx">studyArea</span><span class="p">);</span>
-<span class="linenos">194</span>     <span class="p">}</span>
-<span class="linenos">195</span>
-<span class="linenos">196</span>     <span class="k">if</span> <span class="p">(</span><span class="nx">ALGO</span><span class="o">==</span><span class="s1">&#39;PERCENTILE65&#39;</span><span class="p">){</span>
-<span class="linenos">197</span>         <span class="kd">var</span> <span class="nx">suffix</span> <span class="o">=</span> <span class="s1">&#39;65pc&#39;</span><span class="p">;</span>
-<span class="linenos">198</span>         <span class="kd">var</span> <span class="nx">annualNDVI</span> <span class="o">=</span> <span class="nx">L4578</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">NDVI</span><span class="p">).</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">percentile</span><span class="p">([</span><span class="mf">65</span><span class="p">])).</span><span class="nx">clip</span><span class="p">(</span><span class="nx">studyArea</span><span class="p">);</span>
-<span class="linenos">199</span>     <span class="p">}</span>
+<span class="linenos">176</span><span class="w">     </span><span class="c1">//--------------------------------------------------------------------</span><span class="w"></span>
+<span class="linenos">177</span><span class="w">     </span><span class="c1">//                     Create NDVI Collection</span><span class="w"></span>
+<span class="linenos">178</span><span class="w">     </span><span class="c1">//--------------------------------------------------------------------</span><span class="w"></span>
+<span class="linenos">179</span>
+<span class="linenos">180</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">NDVI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">181</span><span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">normalizedDifference</span><span class="p">([</span><span class="s1">&#39;NIR&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;RED&#39;</span><span class="p">]).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;NDVI&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">182</span><span class="w">       </span><span class="c1">//return image.addBands(ndvi);</span><span class="w"></span>
+<span class="linenos">183</span><span class="w">     </span><span class="p">};</span><span class="w"></span>
+<span class="linenos">184</span>
+<span class="linenos">185</span><span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">ALGO</span><span class="o">==</span><span class="s1">&#39;MEDIAN&#39;</span><span class="p">){</span><span class="w"></span>
+<span class="linenos">186</span><span class="w">         </span><span class="kd">var</span><span class="w"> </span><span class="nx">suffix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;median&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">187</span><span class="w">         </span><span class="kd">var</span><span class="w"> </span><span class="nx">annualNDVI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L4578</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">NDVI</span><span class="p">).</span><span class="nx">median</span><span class="p">().</span><span class="nx">clip</span><span class="p">(</span><span class="nx">studyArea</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">188</span><span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">189</span>
+<span class="linenos">190</span><span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">ALGO</span><span class="o">==</span><span class="s1">&#39;PERCENTILE75&#39;</span><span class="p">){</span><span class="w"></span>
+<span class="linenos">191</span><span class="w">         </span><span class="kd">var</span><span class="w"> </span><span class="nx">suffix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;75pc&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">192</span><span class="w">         </span><span class="kd">var</span><span class="w"> </span><span class="nx">annualNDVI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L4578</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">NDVI</span><span class="p">).</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">percentile</span><span class="p">([</span><span class="mf">75</span><span class="p">])).</span><span class="nx">clip</span><span class="p">(</span><span class="nx">studyArea</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">193</span><span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">194</span>
+<span class="linenos">195</span><span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">ALGO</span><span class="o">==</span><span class="s1">&#39;PERCENTILE65&#39;</span><span class="p">){</span><span class="w"></span>
+<span class="linenos">196</span><span class="w">         </span><span class="kd">var</span><span class="w"> </span><span class="nx">suffix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;65pc&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">197</span><span class="w">         </span><span class="kd">var</span><span class="w"> </span><span class="nx">annualNDVI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L4578</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">NDVI</span><span class="p">).</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">percentile</span><span class="p">([</span><span class="mf">65</span><span class="p">])).</span><span class="nx">clip</span><span class="p">(</span><span class="nx">studyArea</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">198</span><span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">199</span>
 <span class="linenos">200</span>
-<span class="linenos">201</span>
-<span class="linenos">202</span>     <span class="kd">var</span> <span class="nx">ndvi_visualization</span> <span class="o">=</span> <span class="p">{</span>
-<span class="linenos">203</span>       <span class="nx">min</span><span class="o">:</span> <span class="o">-</span><span class="mf">0.22789797020331423</span><span class="p">,</span>
-<span class="linenos">204</span>       <span class="nx">max</span><span class="o">:</span> <span class="mf">0.6575894075894075</span><span class="p">,</span>
-<span class="linenos">205</span>       <span class="nx">palette</span><span class="o">:</span> <span class="s1">&#39;FFFFFF, CE7E45, DF923D, F1B555, FCD163, 99B718, 74A901, 66A000, 529400,&#39;</span> <span class="o">+</span>
-<span class="linenos">206</span>         <span class="s1">&#39;3E8601, 207401, 056201, 004C00, 023B01, 012E01, 011D01, 011301&#39;</span>
-<span class="linenos">207</span>     <span class="p">};</span>
-<span class="linenos">208</span>     <span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">annualNDVI</span><span class="p">,</span> <span class="nx">ndvi_visualization</span><span class="p">,</span> <span class="s1">&#39;NDVI&#39;</span><span class="p">);</span>
-<span class="linenos">209</span>
-<span class="linenos">210</span>     <span class="c1">//--------------------------------------------------------------------</span>
-<span class="linenos">211</span>     <span class="c1">//       Export as GeoTIFF</span>
-<span class="linenos">212</span>     <span class="c1">//--------------------------------------------------------------------</span>
+<span class="linenos">201</span><span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">ndvi_visualization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">202</span><span class="w">       </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">0.22789797020331423</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">203</span><span class="w">       </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="mf">0.6575894075894075</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">204</span><span class="w">       </span><span class="nx">palette</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;FFFFFF, CE7E45, DF923D, F1B555, FCD163, 99B718, 74A901, 66A000, 529400,&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"></span>
+<span class="linenos">205</span><span class="w">         </span><span class="s1">&#39;3E8601, 207401, 056201, 004C00, 023B01, 012E01, 011D01, 011301&#39;</span><span class="w"></span>
+<span class="linenos">206</span><span class="w">     </span><span class="p">};</span><span class="w"></span>
+<span class="linenos">207</span><span class="w">     </span><span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">annualNDVI</span><span class="p">,</span><span class="w"> </span><span class="nx">ndvi_visualization</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;NDVI&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">208</span>
+<span class="linenos">209</span><span class="w">     </span><span class="c1">//--------------------------------------------------------------------</span><span class="w"></span>
+<span class="linenos">210</span><span class="w">     </span><span class="c1">//       Export as GeoTIFF</span><span class="w"></span>
+<span class="linenos">211</span><span class="w">     </span><span class="c1">//--------------------------------------------------------------------</span><span class="w"></span>
+<span class="linenos">212</span>
 <span class="linenos">213</span>
-<span class="linenos">214</span>
-<span class="linenos">215</span>     <span class="nx">Export</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">toDrive</span><span class="p">({</span>
-<span class="linenos">216</span>      <span class="nx">image</span><span class="o">:</span> <span class="nx">annualNDVI</span><span class="p">,</span>
-<span class="linenos">217</span>      <span class="nx">description</span><span class="o">:</span> <span class="nx">country</span> <span class="o">+</span> <span class="s1">&#39;_NDVI_&#39;</span> <span class="o">+</span> <span class="nx">suffix</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="nx">Year</span><span class="p">,</span>
-<span class="linenos">218</span>      <span class="nx">scale</span><span class="o">:</span> <span class="mf">30</span><span class="p">,</span>
-<span class="linenos">219</span>      <span class="nx">region</span><span class="o">:</span> <span class="nx">studyArea</span><span class="p">,</span>
-<span class="linenos">220</span>      <span class="nx">maxPixels</span><span class="o">:</span>  <span class="mf">1e13</span><span class="p">,</span>
-<span class="linenos">221</span>      <span class="nx">fileFormat</span><span class="o">:</span> <span class="s1">&#39;GeoTIFF&#39;</span><span class="p">,</span>
-<span class="linenos">222</span>      <span class="nx">folder</span><span class="o">:</span><span class="s1">&#39;GEE_classification&#39;</span><span class="p">,</span>
-<span class="linenos">223</span>      <span class="nx">formatOptions</span><span class="o">:</span> <span class="p">{</span>
-<span class="linenos">224</span>        <span class="nx">cloudOptimized</span><span class="o">:</span> <span class="kc">true</span>
-<span class="linenos">225</span>          <span class="p">},</span>
-<span class="linenos">226</span>       <span class="nx">skipEmptyTiles</span><span class="o">:</span> <span class="kc">true</span>
-<span class="linenos">227</span>       <span class="p">});</span>
-<span class="linenos">228</span>
-<span class="linenos">229</span>       <span class="c1">//Map.addLayer(L7.first(), {}, &#39;L7&#39;);</span>
+<span class="linenos">214</span><span class="w">     </span><span class="nx">Export</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">toDrive</span><span class="p">({</span><span class="w"></span>
+<span class="linenos">215</span><span class="w">      </span><span class="nx">image</span><span class="o">:</span><span class="w"> </span><span class="nx">annualNDVI</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">216</span><span class="w">      </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="nx">country</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;_NDVI_&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">suffix</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;_&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">Year</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">217</span><span class="w">      </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">218</span><span class="w">      </span><span class="nx">region</span><span class="o">:</span><span class="w"> </span><span class="nx">studyArea</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">219</span><span class="w">      </span><span class="nx">maxPixels</span><span class="o">:</span><span class="w">  </span><span class="mf">1e13</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">220</span><span class="w">      </span><span class="nx">fileFormat</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;GeoTIFF&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">221</span><span class="w">      </span><span class="nx">folder</span><span class="o">:</span><span class="s1">&#39;GEE_classification&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">222</span><span class="w">      </span><span class="nx">formatOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">223</span><span class="w">        </span><span class="nx">cloudOptimized</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="linenos">224</span><span class="w">          </span><span class="p">},</span><span class="w"></span>
+<span class="linenos">225</span><span class="w">       </span><span class="nx">skipEmptyTiles</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="linenos">226</span><span class="w">       </span><span class="p">});</span><span class="w"></span>
+<span class="linenos">227</span>
+<span class="linenos">228</span><span class="w">       </span><span class="c1">//Map.addLayer(L7.first(), {}, &#39;L7&#39;);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -456,36 +783,131 @@ MISLAND uses annual NDVI products based on different percentiles in order to bet
 </section>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../Introduction/models.html" class="btn btn-neutral float-left" title="Data Preparation Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="Landcover.html" class="btn btn-neutral float-right" title="Landcover Data Preparation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2021, Observatoire Du Sahara Et Du Sahel(OSS).
-      <span class="lastupdated">Last updated on True.
-      </span></p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="../Introduction/Introduction.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Data sources</p>
       </div>
-    </section>
+  </a>
+  <a class='right-next' id="next-link" href="Landcover.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Landcover Data Preparation</p>
   </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modis-ndvi">
+   MODIS NDVI
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-download-from-google-earth-engine">
+     Data download from Google Earth Engine
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#landsat-derived-ndvi-msavi-savi">
+   Landsat derived NDVI, MSAVI, SAVI
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Data download from Google Earth Engine
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
-</body>
+</nav>
+</div>
+
+<div class="toc-item">
+  
+<div id="searchbox"></div>
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+<div class="toc-item">
+  
+<div class="tocsection sourcelink">
+    <a href="../_sources/Preprocessing/NDVI.rst.txt">
+        <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2021, Observatoire Du Sahara Et Du Sahel(OSS).<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+</p>
+
+  </div>
+  
+</div>
+  </footer>
+  </body>
 </html>
