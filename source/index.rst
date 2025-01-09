@@ -1,5 +1,5 @@
 .. MISLAND DATA PREPARATION MANUAL documentation master file, created by
-   sphinx-quickstart on Fri Mar 26 13:09:24 2021.
+   sphinx-quickstart on Thur Jan 09 13:09:24 2025.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
@@ -55,9 +55,11 @@ The core-service provides land degradation indicators for Five African regions a
    /Preprocessing/Ecologicalunits
    /Preprocessing/cqi
    /Preprocessing/vqi
-   /Preprocessing/sqi
+   .. /Preprocessing/sqi
+
    /Preprocessing/mqi
-   /Preprocessing/soc
+   .. /Preprocessing/soc
+   
    /Preprocessing/CVI
 
 
