@@ -87,18 +87,12 @@ html_context = {
 }
 
 latex_elements = {
-# The paper size ('letterpaper' or 'a4paper').
-#'papersize': 'letterpaper',
-
-# The font size ('10pt', '11pt' or '12pt').
-'pointsize': '10pt',
-
-# Additional stuff for the LaTeX preamble.
-#'preamble':'',
-
-#Figure placement within LaTeX paper NOT WORKING
-'figure_align': 'H',
-
+    'papersize': 'a4paper',  # or 'letterpaper'
+    'pointsize': '10pt',
+    'preamble': r'''
+        % Custom LaTeX commands or packages
+    ''',
 }
+
 
 master_doc = 'index'
