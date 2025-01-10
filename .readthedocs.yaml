@@ -7,12 +7,13 @@ build:
   tools:
     python: "3.9"
 
-formats:
-  - pdf
-
 python:
   install:
     - requirements: requirements.txt
 
 sphinx:
   configuration: source/conf.py
+
+formats:
+  - pdf
+  - epub
