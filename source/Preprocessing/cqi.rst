@@ -132,7 +132,7 @@ Select the proper inputs for the *Potential Evapotranspiration* and the *Precipi
 
     Setting the resolution of the output layers layers
 
-Uploading the Arididy Index to MISLAND Service
+Uploading the Aridity Index to MISLAND Service
 ________________________________________________
 .. note::
    It is important that you give the Aridity Index layer a descriptive name and assocciate it with the correct year and raster category as shown below. 
