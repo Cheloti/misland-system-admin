@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'MISLAND DATA PREPARATION MANUAL'
-copyright = '2025, Observatoire Du Sahara Et Du Sahel(OSS)'
+copyright = '2021, Observatoire Du Sahara Et Du Sahel(OSS)'
 author = 'LocateIT Kenya Limited'
 
 # The full version, including alpha/beta/rc tags
@@ -87,12 +87,18 @@ html_context = {
 }
 
 latex_elements = {
-    'papersize': 'a4paper',  # or 'letterpaper'
-    'pointsize': '10pt',
-    'preamble': r'''
-        % Custom LaTeX commands or packages
-    ''',
-}
+# The paper size ('letterpaper' or 'a4paper').
+#'papersize': 'letterpaper',
 
+# The font size ('10pt', '11pt' or '12pt').
+'pointsize': '10pt',
+
+# Additional stuff for the LaTeX preamble.
+#'preamble':'',
+
+#Figure placement within LaTeX paper NOT WORKING
+'figure_align': 'H',
+
+}
 
 master_doc = 'index'
