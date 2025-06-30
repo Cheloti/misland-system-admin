@@ -103,5 +103,5 @@ latex_elements = {
 
 master_doc = 'index'
 
-extensions = ['rst2pdf.pdfbuilder',  "sphinx_pdf_generate"]
+extensions = ['rst2pdf.pdfbuilder']
 pdf_documents = [('index', u'MislandAfrica-Manual', u'MISLAND AFRICA SYSTEM ADMINISTRATION AND DATA PREPARATION MANUAL', u'LocateIT Kenya Limited'),]
