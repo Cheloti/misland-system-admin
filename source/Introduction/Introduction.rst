@@ -2,7 +2,7 @@
 Data sources
 ============
 
-MISLAND-North Africa draws on a number of data sources. The data sets listed below are 
+MISLAND Africa draws on a number of data sources. The data sets listed below are 
 owned/made available by the following organizations and individuals under 
 separate terms as indicated in their respective metadata.
 
