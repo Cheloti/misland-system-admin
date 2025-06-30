@@ -14,7 +14,7 @@ To compute and download the mean anual MODIS NDVI data from google earth engine.
    :linenos:
 
 	/**** Start of imports. If edited, may not auto-convert in the playground. ****/
-	var table = ee.FeatureCollection("users/brianchelloti/MislandAfrica");
+	var table = ee.FeatureCollection("projects/ee-briansimiyu/assets/Africa_shapefile");
 	/***** End of imports. If edited, may not auto-convert in the playground. *****/
 	var dataset = ee.ImageCollection('MODIS/006/MOD13Q1')
 	                  .filter(ee.Filter.date('2018-01-01', '2019-01-01'))
@@ -59,7 +59,7 @@ To compute and download desired percentile composites from google earth engine. 
 .. code-block:: javascript
    :linenos:
 
-    // Required Data Inputs 
+    /// Required Data Inputs 
 	// ===================
 	// * USGS/NASA's Landsat 4 surface reflectance tier 1 dataset (August 1982 - December 1993)
 	// * USGS/NASA's Landsat 5 surface reflectance tier 1 dataset (January 1, 1984 - May 5, 2012)
@@ -69,7 +69,7 @@ To compute and download desired percentile composites from google earth engine. 
 
 	var countries = ee.FeatureCollection("USDOS/LSIB_SIMPLE/2017");
 
-	var Year='2002'
+	var Year='2000'
 
 
 	var country = 'Libya';
@@ -102,7 +102,7 @@ To compute and download desired percentile composites from google earth engine. 
 	    // If the cloud bit (5) is set and the cloud confidence (7) is high
 	    // or the cloud shadow bit is set (3), then it's a bad pixel.
 	var cloudMaskL7 = function(image) {
-	  var qa = image.select('pixel_qa');
+	  var qa = image.select('QA_PIXEL');
 	  var cloud = qa.bitwiseAnd(1 << 5)
 	                  .and(qa.bitwiseAnd(1 << 7))
 	                  .or(qa.bitwiseAnd(1 << 3));
@@ -126,7 +126,7 @@ To compute and download desired percentile composites from google earth engine. 
 
 
 	var cloudMaskL45 = function(image) {
-	  var qa = image.select('pixel_qa');
+	  var qa = image.select('QA_PIXEL');
 	  var cloud = qa.bitwiseAnd(1 << 5)
 	                  .and(qa.bitwiseAnd(1 << 7))
 	                  .or(qa.bitwiseAnd(1 << 3));
@@ -178,28 +178,28 @@ To compute and download desired percentile composites from google earth engine. 
 
 
 	    // Apply Cloudmask to L4.5.7
-	var L4 = ee.ImageCollection("LANDSAT/LT04/C01/T1_SR")
+	var L4 = ee.ImageCollection("LANDSAT/LT04/C02/T2_TOA")
 	                  .filterDate(start_date, end_date)
 	                  .filter(ee.Filter.lessThan('CLOUD_COVER_LAND', cloudCoveragePercentage))
 	                  .filterBounds(studyArea)
 	                  .map(cloudMaskL45)
 	                  .select(['B3', 'B4'], ['RED', 'NIR']);;
 
-	var L5 = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR')
+	var L5 = ee.ImageCollection('LANDSAT/LT05/C02/T2_TOA')
 	                  .filterDate(start_date, end_date)
 	                  .filter(ee.Filter.lessThan('CLOUD_COVER_LAND', cloudCoveragePercentage))
 	                  .filterBounds(studyArea)
 	                  .map(cloudMaskL45)
 	                  .select(['B3', 'B4'], ['RED', 'NIR']);;
 
-	var L7a = ee.ImageCollection('LANDSAT/LE07/C01/T1_SR')
+	var L7a = ee.ImageCollection('LANDSAT/LE07/C02/T2_TOA')
 	                  .filterDate('1999-01-01', '2003-04-01')
 	                  .filterDate(start_date, end_date)
 	                  .filter(ee.Filter.lessThan('CLOUD_COVER_LAND', 100))
 	                  .filterBounds(studyArea)
 	                  .map(cloudMaskL7)
 	                  .select(['B3', 'B4'], ['RED', 'NIR']);;
-	var L7b = ee.ImageCollection('LANDSAT/LE07/C01/T1_SR')
+	var L7b = ee.ImageCollection('LANDSAT/LE07/C02/T2_TOA')
 	                  .filterDate('2012-01-01', '2013-12-31')
 	                  .filterDate(start_date, end_date)
 	                  .filter(ee.Filter.lessThan('CLOUD_COVER_LAND', 100))
@@ -209,7 +209,7 @@ To compute and download desired percentile composites from google earth engine. 
 
 	var L7 = L7a.merge(L7b);
 
-	var L8 = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR')
+	var L8 = ee.ImageCollection('LANDSAT/LC08/C02/T2_TOA')
 	                  .filterDate(start_date, end_date)
 	                  .filter(ee.Filter.lessThan('CLOUD_COVER', cloudCoveragePercentage))
 	                  .filterBounds(studyArea)
@@ -232,6 +232,7 @@ To compute and download desired percentile composites from google earth engine. 
 	//Merge Landsat 4, 5 , 7 '
 
 	var L4578 = L4.merge(L5).merge(L7).merge(L8);
+	print(L4578)
 
 
 	//--------------------------------------------------------------------

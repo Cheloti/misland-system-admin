@@ -97,7 +97,7 @@ ____________________________
     Selecting All layers to merge
 save the output to a temporary layer so as to export it with desired properties in the next step.
 
-4. Right click on the layer and navigate to *Export*>*Save as* option and save the layer to your desired location with the appropriate name.
+4. Right click on the layer and navigate to *Export* > *Save* *as* option and save the layer to your desired location with the appropriate name.
 
 .. note::
    The forest loss by year raster has values ranging from 1-20. The values represent the loss year form 2001 to 2020 hence to set the "nodata" value to 0 on the *Save Raster Layer as* dialog, check the **No data values** and input the values as shown in the figure below:

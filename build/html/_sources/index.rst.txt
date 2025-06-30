@@ -32,10 +32,16 @@ The core-service provides land degradation indicators for Five African regions a
 ..    .. _PDF Version of this doucument: https://mislanddata.readthedocs.io/_/downloads/en/latest/pdf/
 
 .. toctree::
+   :maxdepth: 2
+   :caption: Introduction to MISLAND
+
+   /Introduction/Introduction
+
+.. toctree::
    :maxdepth: 3
    :caption: MISLAND System Admin
    
-   /Introduction/admin
+   /Admin/admin
 
 .. toctree::
    :maxdepth: 3

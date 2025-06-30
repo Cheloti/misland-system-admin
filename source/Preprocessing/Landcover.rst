@@ -2,15 +2,76 @@
 Landcover Data Preparation
 ===========================
 
-MISLAND Africa usese the European Space Agency (ESA) Climate Change Initiative (CCI) land cover dataset. This dataset provides global maps describing the land surface into 22 classes, which have been defined using the United Nations Food and Agriculture Organization’s (UN FAO) Land Cover Classification System (LCCS). In addition to the land cover (LC) maps, four quality flags are produced to document the reliability of the classification and change detection.
+MISLAND Africa uses the European Space Agency (ESA) Climate Change Initiative (CCI) land cover dataset. This dataset provides global maps describing the land surface into 22 classes, which have been defined using the United Nations Food and Agriculture Organization’s (UN FAO) Land Cover Classification System (LCCS). In addition to the land cover (LC) maps, four quality flags are produced to document the reliability of the classification and change detection.
 In order to ensure continuity, these land cover maps are consistent with the series of global annual LC maps from the 1990s to 2015 produced by the European Space Agency (ESA) Climate Change Initiative (CCI), which are also available on the ESA CCI LC viewer.
 
 The dataset can be downloaded here from the `ESA C3S archives`_
 
 .. _ESA C3S archives: https://developers.google.com/earth-engine/datasets/catalog/landsat
 
-Data Preprocessing Steps
-------------------------
+Data Processing and Download in GEE
+------------------------------------------------------------
+
+This Google Earth Engine (GEE) script performs land cover classification across the entire African continent using the ESA Climate Change Initiative (CCI) land cover dataset. The data spans from 1992 to 2018, with this analysis specifically targeting the year 2018.
+
+Key processing steps include:
+
+- **Clipping** the global ESA CCI land cover image to the African continent boundary defined by a custom ``Africa_shapefile`` FeatureCollection.
+- **Cleaning** the dataset by replacing invalid land cover values (``9999``) with a no-data placeholder (``-32768``) and masking them out.
+- **Reclassifying** the original ESA land cover classes into seven broad IPCC land use/land cover (LULC) categories. This harmonization is useful for standardized climate reporting and environmental assessments.
+- **Visualizing** the resulting classified land cover image in the GEE map viewer.
+- **Exporting** the processed image as a Cloud-Optimized GeoTIFF (COG) to Google Drive, with the following settings:
+  - Coordinate Reference System: EPSG:4326 (WGS 84)
+  - Spatial resolution: 300 meters
+  - Region: Entire African continent
+  - Skipping of empty tiles to optimize storage and export speed
+
+This script enables large-scale monitoring of land cover dynamics and supports regional to continental-scale reporting on land use trends, degradation, and policy-relevant indicators.
+
+Script
+------
+
+.. code-block:: javascript
+
+    var africa = ee.FeatureCollection("projects/ee-briansimiyu/assets/Africa_shapefile");
+
+    // Land cover data from ESA CCI
+    var lc = ee.Image("users/geflanddegradation/toolbox_datasets/lcov_esacc_1992_2018");
+    var lc = lc.where(lc.eq(9999), -32768);
+    var lc = lc.updateMask(lc.neq(-32768));
+    var lc = lc.clip(africa);
+
+    print(lc);
+
+    var matrix = [10, 11, 12, 20, 30, 40, 110, 120, 121, 122, 130, 140, 150, 151, 152, 153,
+                  50, 60, 61, 62, 70, 71, 72, 80, 81, 82, 90, 100, 160, 170, 180, 190, 200,
+                  201, 202, 220, 210];
+    var matrix2 = [5,5,5,5,5,6,6,6,6,6,6,6,6,6,6,6,7,7,7,7,7,7,7,7,7,7,7,7,4,4,4,3,2,2,2,2,1];
+
+    // Reclassify to 7 IPCC classes
+    var lc_t0 = lc.select('y2018')
+        .remap(matrix, matrix2);
+
+    Map.addLayer(lc_t0, {}, 'Landcover');
+
+    Export.image.toDrive({
+        image: lc_t0,
+        description: 'Landcover',
+        crs: 'EPSG:4326',
+        scale: 300,
+        region: africa,
+        maxPixels: 1e13,
+        fileFormat: 'GeoTIFF',
+        folder: 'LC_',
+        formatOptions: {
+            cloudOptimized: true
+        },
+        skipEmptyTiles: true
+    });
+
+
+Data Preprocessing Steps in QGIS
+--------------------------------
 1. Unzip the C3S-LC-L4-LCCS-Map-300m-P1Y-yyyy-v2.1.1 data from the compressed format that it comes in after downloading. Closely examine the contents of this folder as it has various files.
 
 .. figure:: ../_static/Images/LC1.png
