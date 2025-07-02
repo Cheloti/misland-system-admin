@@ -43,6 +43,14 @@ The core-service provides land degradation indicators for Five African regions a
    
    /Admin/admin
 
+
+.. toctree::
+   :maxdepth: 3
+   :caption: MISLAND QGIS plugin Admin
+   
+   /plugin/plugin
+
+
 .. toctree::
    :maxdepth: 3
    :caption: Data Preparation
